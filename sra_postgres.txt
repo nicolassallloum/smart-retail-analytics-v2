@@ -1,0 +1,289 @@
+[
+    {
+        "Id": "2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed",
+        "Created": "2026-02-25T21:30:08.353639042Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 29020,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-02-25T21:30:08.812236433Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:2bc89eed5490967e6b1fa5175d84cb45d65f19fbb8973c7b23450dea785b9505",
+        "ResolvConfPath": "/var/lib/docker/containers/2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed/hostname",
+        "HostsPath": "/var/lib/docker/containers/2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed/hosts",
+        "LogPath": "/var/lib/docker/containers/2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed/2d078d0cc6fc3fd49267e3c7ab3622cbe3178b03bdefa606cda2bdad621e89ed-json.log",
+        "Name": "/sra_postgres",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "smart-retail-analytics_sra_pgdata:/var/lib/postgresql/data:rw",
+                "/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/533416185896b1ea935e384422f8d1600a335500be87d74b9acc0199e4646ce6:/sql:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "smart-retail-analytics_default",
+            "PortBindings": {
+                "5432/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "5432"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "smart-retail-analytics_sra_pgdata",
+                "Source": "/var/lib/docker/volumes/smart-retail-analytics_sra_pgdata/_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/533416185896b1ea935e384422f8d1600a335500be87d74b9acc0199e4646ce6",
+                "Destination": "/sql",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "2d078d0cc6fc",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_PASSWORD=postgres",
+                "POSTGRES_DB=smart_retail_dw",
+                "POSTGRES_USER=postgres",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/15/bin",
+                "GOSU_VERSION=1.19",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=15",
+                "PG_VERSION=15.16-1.pgdg13+1",
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Image": "postgres:15",
+            "Volumes": {
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "c7f6645f81cc7a67c7e65a0e24f2c58e404723355bf2f5f400a199a01eda72b1",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:2bc89eed5490967e6b1fa5175d84cb45d65f19fbb8973c7b23450dea785b9505",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "smart-retail-analytics",
+                "com.docker.compose.project.config_files": "/home/nix/smart-retail-analytics/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/nix/smart-retail-analytics",
+                "com.docker.compose.service": "postgres",
+                "com.docker.compose.version": "2.39.4",
+                "desktop.docker.io/wsl-distro": "Ubuntu"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "f2dbd275ddd8535e3f0de1a2928a07173deb656a44907d2e98e95dec5cd28bfe",
+            "SandboxKey": "/var/run/docker/netns/f2dbd275ddd8",
+            "Ports": {
+                "5432/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "5432"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "5432"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "smart-retail-analytics_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sra_postgres",
+                        "postgres"
+                    ],
+                    "MacAddress": "42:3c:08:12:02:44",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "00635649e14cc387ec14bbf700623e77067de57c86e411d42076271df95a6497",
+                    "EndpointID": "81bfebdcf1d707310d2145b6d1d9110a59580938a8f63c2cd85bf691de4fa362",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sra_postgres",
+                        "postgres",
+                        "2d078d0cc6fc"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:c5ffa1e4284bbc7023297fe8b24cdca1785865a5a6aca14245dcff94ee65fc08",
+            "size": 3627,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:b29a157cc8540addda9836c23750e389693bf3b6d9a932a55504899e5601a66b",
+                "org.opencontainers.image.base.name": "debian:trixie-slim",
+                "org.opencontainers.image.created": "2026-02-24T19:15:54Z",
+                "org.opencontainers.image.revision": "2c1a455e1e9e5f0f0a791264c2eec5ef36e1e36f",
+                "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#2c1a455e1e9e5f0f0a791264c2eec5ef36e1e36f:15/trixie",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+                "org.opencontainers.image.version": "15.16"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

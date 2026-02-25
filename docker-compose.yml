@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: sra_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: smart_retail_dw
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sra_password
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    ports:
+      - "55432:5432"
+    volumes:
+      - sra_pgdata:/var/lib/postgresql/data
+      - ./sql:/sql
+
+  mongo:
+    image: mongo:7
+    container_name: sra_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - sra_mongodata:/data/db
+
+volumes:
+  sra_pgdata:
+  sra_mongodata:

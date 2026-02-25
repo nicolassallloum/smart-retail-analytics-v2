@@ -1,0 +1,353 @@
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+2026-02-21T23:19:48.241715Z [info     ] Starting the scheduler         [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1058
+2026-02-21T23:19:48.492246Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+Dag run  in running state
+Dag information Queued at: 2026-02-21 23:19:48.555151+00:00 version: 1
+2026-02-21T23:19:48.667375Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-21T23:19:48.667612Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-21T23:19:48.667964Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-21T23:19:48.669465Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-21T23:19:48.749486Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-21T23:19:48.770675Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:19:49.773047Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:19:50.965621Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:19:54.117529Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:19:58.402726Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=54601 signal_sent=SIGKILL
+2026-02-21T23:19:58.577920Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-21T00:00:00+00:00', try_number=1, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-21T23:19:58.615028Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-21T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=None, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=1, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-21 23:19:48.668270+00:00, scheduled_dttm=2026-02-21 23:19:48.648223+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-21T23:19:58.617015Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-21T23:24:49.038976Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-21T23:24:59.757046Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-21T23:24:59.757489Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-21T23:24:59.757727Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-21T23:24:59.759220Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-21T23:25:00.015956Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-21T23:25:00.158054Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:25:01.170780Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:25:02.940355Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:25:05.931339Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-21T23:25:12.699370Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=55426 signal_sent=SIGKILL
+2026-02-21T23:25:13.518165Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-21T00:00:00+00:00', try_number=2, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-21T23:25:13.532977Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-21T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=2026-02-21 23:19:58.629092+00:00, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=2, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-21 23:24:59.758268+00:00, scheduled_dttm=2026-02-21 23:24:59.736305+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-21T23:25:13.534668Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-21T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-21T23:25:17.732292Z [info     ] Marking run <DagRun smart_retail_pipeline @ 2026-02-21 00:00:00+00:00: scheduled__2026-02-21T00:00:00+00:00, state:running, queued_at: 2026-02-21 23:19:48.555151+00:00. run_type: scheduled> failed [airflow.models.dagrun.DagRun] loc=dagrun.py:1171
+Dag run  in failure state
+Dag information:smart_retail_pipeline Run id: scheduled__2026-02-21T00:00:00+00:00 Run type: scheduled
+Failed with message: task_failure
+2026-02-21T23:25:17.732864Z [info     ] DagRun Finished: dag_id=smart_retail_pipeline, logical_date=2026-02-21 00:00:00+00:00, run_id=scheduled__2026-02-21T00:00:00+00:00, run_start_date=2026-02-21 23:19:48.602649+00:00, run_end_date=2026-02-21 23:25:17.732623+00:00, run_duration=329.129974, state=failed, run_type=scheduled, data_interval_start=2026-02-21 00:00:00+00:00, data_interval_end=2026-02-21 00:00:00+00:00, [airflow.models.dagrun.DagRun] loc=dagrun.py:1274
+2026-02-21T23:29:49.475621Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-21T23:34:50.687885Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-21T23:39:51.121024Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-21T23:44:51.596704Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T00:22:26.860832Z [info     ] Heartbeat recovered after 2086.86 seconds [airflow.jobs.job.Job] loc=job.py:253
+Dag run  in running state
+Dag information Queued at: 2026-02-22 00:22:28.172128+00:00 version: 1
+2026-02-22T01:04:57.334778Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-22T01:04:57.335858Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-22T01:04:57.347796Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-22T01:04:57.483010Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-22T02:56:43.602485Z [info     ] Heartbeat recovered after 11337.20 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T02:56:45.070867Z [info     ] Heartbeat recovered after 6707.06 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T02:56:45.783735Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-22T02:56:46.192353Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T02:56:47.203384Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T02:56:49.202049Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T02:56:52.306263Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T02:57:01.529454Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=58866 signal_sent=SIGKILL
+2026-02-22T10:01:53.129316Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-22T00:00:00+00:00', try_number=1, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-22T10:01:53.191895Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-22T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=None, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=1, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-22 01:04:57.365890+00:00, scheduled_dttm=2026-02-22 01:04:56.791938+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-22T10:01:53.195516Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-22T10:01:53.623366Z [info     ] Heartbeat recovered after 25497.35 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T10:51:30.276558Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-22T10:51:30.276866Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-22T10:51:30.277006Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-22T10:51:30.278131Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-22T10:51:30.510628Z [info     ] Heartbeat recovered after 2977.19 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T10:51:31.413422Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-22T10:51:31.584232Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T10:51:32.608313Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T11:04:34.434277Z [info     ] Heartbeat recovered after 784.08 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T11:04:34.637157Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T11:04:36.084744Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-22T11:04:38.972097Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=59106 signal_sent=SIGKILL
+2026-02-22T11:04:39.229488Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-22T00:00:00+00:00', try_number=2, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-22T11:04:39.256255Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-22T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=2026-02-22 10:01:53.223802+00:00, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=2, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-22 10:51:30.277423+00:00, scheduled_dttm=2026-02-22 10:51:29.720005+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-22T11:04:39.257844Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-22T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-22T11:04:43.074832Z [info     ] Marking run <DagRun smart_retail_pipeline @ 2026-02-22 00:00:00+00:00: scheduled__2026-02-22T00:00:00+00:00, state:running, queued_at: 2026-02-22 00:22:28.172128+00:00. run_type: scheduled> failed [airflow.models.dagrun.DagRun] loc=dagrun.py:1171
+Dag run  in failure state
+Dag information:smart_retail_pipeline Run id: scheduled__2026-02-22T00:00:00+00:00 Run type: scheduled
+Failed with message: task_failure
+2026-02-22T11:04:43.075248Z [info     ] DagRun Finished: dag_id=smart_retail_pipeline, logical_date=2026-02-22 00:00:00+00:00, run_id=scheduled__2026-02-22T00:00:00+00:00, run_start_date=2026-02-22 01:04:54.737148+00:00, run_end_date=2026-02-22 11:04:43.075023+00:00, run_duration=35988.337875, state=failed, run_type=scheduled, data_interval_start=2026-02-22 00:00:00+00:00, data_interval_end=2026-02-22 00:00:00+00:00, [airflow.models.dagrun.DagRun] loc=dagrun.py:1274
+2026-02-22T11:06:00.897644Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-22T11:06:01.061425Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T11:33:01.619480Z [info     ] Heartbeat recovered after 1552.01 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T12:02:37.357201Z [info     ] Heartbeat recovered after 1775.80 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T14:29:37.350195Z [info     ] Heartbeat recovered after 8820.01 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T15:59:46.005611Z [info     ] Heartbeat recovered after 5408.89 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T17:14:48.800993Z [info     ] Heartbeat recovered after 4502.82 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T17:14:58.788572Z [error    ] Job heartbeat failed with error [airflow.jobs.job.Job] loc=job.py:262
+Traceback (most recent call last):
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 249, in heartbeat
+    session.commit()
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/nix/smart-retail-analytics/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: UPDATE job SET latest_heartbeat=? WHERE job.id = ?]
+[parameters: ('2026-02-22 15:59:54.224046', 14)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-22T17:14:59.725652Z [error    ] Job heartbeat failed with error. Scheduler may go into unhealthy state [airflow.jobs.job.Job] loc=job.py:268
+2026-02-22T19:01:10.074934Z [info     ] Heartbeat recovered after 10875.85 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T21:56:47.553154Z [info     ] Heartbeat recovered after 10515.35 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-22T21:59:32.683176Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:04:27.077388Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:09:20.983807Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:14:14.372466Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:19:07.530166Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:24:00.112556Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-22T22:24:00.382711Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:28:53.144448Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:33:45.693493Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:38:38.279603Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:43:30.674658Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:48:23.164870Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:53:15.126928Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-22T22:53:15.532080Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T22:58:07.891239Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:03:00.202419Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:07:52.520402Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:12:44.838024Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:17:37.166136Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:22:28.942690Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-22T23:22:29.481549Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:27:21.781172Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:32:14.049583Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:37:06.769646Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:41:59.519355Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:46:55.254571Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:51:49.682564Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-22T23:51:50.339205Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-22T23:56:46.436955Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+Dag run  in running state
+Dag information Queued at: 2026-02-23 00:00:01.216041+00:00 version: 1
+2026-02-23T00:00:01.268007Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-23T00:00:01.268263Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-23T00:00:01.268398Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-23T00:00:01.269546Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-23T00:00:01.508557Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-23T00:00:01.601863Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:00:02.607954Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:00:03.857105Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:00:06.665308Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:00:12.212181Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=78625 signal_sent=SIGKILL
+2026-02-23T00:00:13.164684Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-23T00:00:00+00:00', try_number=1, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-23T00:00:13.168751Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-23T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=None, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=1, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-23 00:00:01.268753+00:00, scheduled_dttm=2026-02-23 00:00:01.250807+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-23T00:00:13.169813Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-23T00:01:42.725318Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:05:13.845724Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-23T00:05:13.845978Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-23T00:05:13.846143Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-23T00:05:13.847353Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-23T00:05:13.969162Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-23T00:05:13.997616Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:05:14.999783Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:05:16.710340Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:05:19.722752Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-23T00:05:25.317356Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=79362 signal_sent=SIGKILL
+2026-02-23T00:05:25.822889Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-23T00:00:00+00:00', try_number=2, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-23T00:05:25.827545Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-23T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=2026-02-23 00:00:13.170820+00:00, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=2, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-23 00:05:13.846548+00:00, scheduled_dttm=2026-02-23 00:05:13.836449+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-23T00:05:25.828960Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-23T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-23T00:05:29.721583Z [info     ] Marking run <DagRun smart_retail_pipeline @ 2026-02-23 00:00:00+00:00: scheduled__2026-02-23T00:00:00+00:00, state:running, queued_at: 2026-02-23 00:00:01.216041+00:00. run_type: scheduled> failed [airflow.models.dagrun.DagRun] loc=dagrun.py:1171
+Dag run  in failure state
+Dag information:smart_retail_pipeline Run id: scheduled__2026-02-23T00:00:00+00:00 Run type: scheduled
+Failed with message: task_failure
+2026-02-23T00:05:29.721925Z [info     ] DagRun Finished: dag_id=smart_retail_pipeline, logical_date=2026-02-23 00:00:00+00:00, run_id=scheduled__2026-02-23T00:00:00+00:00, run_start_date=2026-02-23 00:00:01.234295+00:00, run_end_date=2026-02-23 00:05:29.721777+00:00, run_duration=328.487482, state=failed, run_type=scheduled, data_interval_start=2026-02-23 00:00:00+00:00, data_interval_end=2026-02-23 00:00:00+00:00, [airflow.models.dagrun.DagRun] loc=dagrun.py:1274
+2026-02-23T00:06:39.535537Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:11:36.928317Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:16:34.398930Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:21:31.056818Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-23T00:21:31.931197Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:26:29.497287Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T00:31:27.117449Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T01:13:57.754358Z [info     ] Heartbeat recovered after 2510.36 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T01:19:00.523149Z [info     ] Heartbeat recovered after 302.84 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T02:51:00.170619Z [info     ] Heartbeat recovered after 5519.69 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T03:57:08.135593Z [info     ] Heartbeat recovered after 3968.10 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T04:01:00.928263Z [info     ] Heartbeat recovered after 100.36 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T06:05:38.930476Z [info     ] Heartbeat recovered after 7478.08 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T06:06:20.712929Z [info     ] Heartbeat recovered after 42.35 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T06:06:21.844102Z [info     ] Heartbeat recovered after 38.10 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T09:56:15.889273Z [info     ] Heartbeat recovered after 13794.09 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T09:56:17.092652Z [info     ] Heartbeat recovered after 4580.21 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T09:57:34.236541Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-23T11:26:45.997884Z [info     ] Heartbeat recovered after 5297.94 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T11:26:47.117104Z [info     ] Heartbeat recovered after 5293.64 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T11:57:02.013749Z [info     ] Heartbeat recovered after 1814.94 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T14:55:31.373826Z [info     ] Heartbeat recovered after 10709.36 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T15:56:43.619789Z [info     ] Heartbeat recovered after 3672.31 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T16:01:30.735641Z [info     ] Heartbeat recovered after 282.09 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-23T16:01:31.044890Z [info     ] Heartbeat recovered after 276.80 seconds [airflow.jobs.job.Job] loc=job.py:253
+Dag run  in running state
+Dag information Queued at: 2026-02-24 00:14:49.064385+00:00 version: 1
+2026-02-24T00:14:49.901382Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-24T00:14:49.901624Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-24T00:14:49.901768Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-24T00:14:49.902876Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-24T00:14:50.081685Z [info     ] Heartbeat recovered after 29593.65 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T00:14:51.762072Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-24T00:14:52.212478Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T00:14:53.322680Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T01:08:55.254832Z [info     ] Heartbeat recovered after 3245.31 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T01:08:55.555586Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T01:08:59.310510Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T01:09:00.676988Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=85339 signal_sent=SIGKILL
+2026-02-24T01:09:01.190310Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-24T00:00:00+00:00', try_number=1, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-24T01:09:01.326700Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-24T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=None, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=1, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-24 00:14:49.902149+00:00, scheduled_dttm=2026-02-24 00:14:49.829820+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-24T01:09:01.328521Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-24T03:42:59.718309Z [info     ] 1 tasks up for execution:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:448
+2026-02-24T03:42:59.718501Z [info     ] DAG smart_retail_pipeline has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:520
+2026-02-24T03:42:59.718652Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:659
+2026-02-24T03:42:59.815203Z [info     ] Trying to enqueue tasks: [<TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:744
+2026-02-24T03:43:00.240343Z [info     ] Heartbeat recovered after 9221.68 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T03:43:02.177009Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1975
+2026-02-24T03:43:02.407982Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 1st time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T03:43:03.412619Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 2nd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T04:00:46.747345Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 3rd time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T04:00:46.966537Z [info     ] Heartbeat recovered after 1066.95 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T04:00:48.501564Z [warning  ] Starting call to 'airflow.sdk.api.client.Client.request', this is the 4th time calling it. [airflow.sdk.api.client] loc=before.py:40
+2026-02-24T04:00:50.057929Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:710 pid=85950 signal_sent=SIGKILL
+2026-02-24T04:00:50.648885Z [info     ] Received executor event with state failed for task instance TaskInstanceKey(dag_id='smart_retail_pipeline', task_id='generate_raw_data', run_id='scheduled__2026-02-24T00:00:00+00:00', try_number=2, map_index=-1) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:822
+2026-02-24T04:00:50.666920Z [info     ] TaskInstance Finished: dag_id=smart_retail_pipeline, task_id=generate_raw_data, run_id=scheduled__2026-02-24T00:00:00+00:00, map_index=-1, run_start_date=None, run_end_date=2026-02-24 01:09:01.341088+00:00, run_duration=None, state=queued, executor=LocalExecutor(parallelism=32), executor_state=failed, try_number=2, max_tries=1, pool=default_pool, queue=default, priority_weight=4, operator=BashOperator, queued_dttm=2026-02-24 03:42:59.719022+00:00, scheduled_dttm=2026-02-24 03:42:59.570783+00:00,queued_by_job_id=14, pid=None [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:868
+2026-02-24T04:00:50.677277Z [error    ] Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally [airflow.task] loc=taskinstance.py:1527
+Task instance in failure state
+Task instance's state was changed through the API.
+Task operator:BashOperator
+Failure caused by Executor LocalExecutor(parallelism=32) reported that the task instance <TaskInstance: smart_retail_pipeline.generate_raw_data scheduled__2026-02-24T00:00:00+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2026-02-24T04:00:55.088709Z [info     ] Marking run <DagRun smart_retail_pipeline @ 2026-02-24 00:00:00+00:00: scheduled__2026-02-24T00:00:00+00:00, state:running, queued_at: 2026-02-24 00:14:49.064385+00:00. run_type: scheduled> failed [airflow.models.dagrun.DagRun] loc=dagrun.py:1171
+Dag run  in failure state
+Dag information:smart_retail_pipeline Run id: scheduled__2026-02-24T00:00:00+00:00 Run type: scheduled
+Failed with message: task_failure
+2026-02-24T04:00:55.089040Z [info     ] DagRun Finished: dag_id=smart_retail_pipeline, logical_date=2026-02-24 00:00:00+00:00, run_id=scheduled__2026-02-24T00:00:00+00:00, run_start_date=2026-02-24 00:14:49.617540+00:00, run_end_date=2026-02-24 04:00:55.088925+00:00, run_duration=13565.471385, state=failed, run_type=scheduled, data_interval_start=2026-02-24 00:00:00+00:00, data_interval_end=2026-02-24 00:00:00+00:00, [airflow.models.dagrun.DagRun] loc=dagrun.py:1274
+2026-02-24T06:18:02.696450Z [info     ] Heartbeat recovered after 8108.88 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T07:44:10.691566Z [info     ] Heartbeat recovered after 5168.35 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T09:36:22.031423Z [info     ] Heartbeat recovered after 6715.10 seconds [airflow.jobs.job.Job] loc=job.py:253
+2026-02-24T09:36:31.794972Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T09:41:31.793972Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T09:46:30.330929Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-24T09:46:31.362309Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T09:51:31.423961Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T09:56:31.450800Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:01:31.489162Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:06:31.593316Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:11:31.613747Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:16:30.369793Z [info     ] DAG bundles loaded: dags-folder, example_dags [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2026-02-24T10:16:31.666211Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:21:31.738719Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2324
+2026-02-24T10:22:32.228068Z [info     ] Exiting gracefully upon receiving signal 2 [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:285
+2026-02-24T10:22:32.228613Z [info     ] Shutting down LocalExecutor; waiting for running tasks to finish.  Signal again if you don't want to wait. [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:252
+2026-02-24T10:22:32.691896Z [info     ] Exited execute loop            [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1098

@@ -1,0 +1,29 @@
+airflow db init
+airflow users create --username nix --password nix --role Admin --email nicolassallloum@gmail.com
+airflow webserver --port 8090
+airflow scheduler
+airflow standalone --port 8090
+airflow api-server -p 8090
+source .venv/bin/activate
+airflow triggerer
+pkill -f airflow
+airflow db reset -y
+airflow standalone
+cat ~/airflow/simple_auth_manager_passwords.json.generated
+
+
+    bash_command="python3 /home/nix/smart-retail-analytics/etl/generate_raw_data.py"
+    bash_command="python3 /home/nix/smart-retail-analytics/etl/clean_transform.py"
+    bash_command="python3 /home/nix/smart-retail-analytics/spark/spark_kpis.py"
+    bash_command="python3 /home/nix/smart-retail-analytics/etl/load_to_postgres.py"
+
+
+airflow dags unpause smart_retail_pipeline
+airflow dags list | grep smart_retail_pipeline
+
+pip install fastapi uvicorn
+mkdir -p orchestrator monitoring logs docs/linux systemd
+mkdir -p orchestrator/state
+cd ~/smart-retail-analytics
+/home/nix/smart-retail-analytics/.venv/bin/python orchestrator/pipeline_engine.py
+uvicorn monitoring.api:app --host 0.0.0.0 --port 8090
