@@ -1,172 +1,269 @@
-Smart Retail Analytics
-End-to-End Data Engineering & Retail Analytics Project
+# 📊 Smart Retail Analytics
 
+*End-to-End Data Engineering & Retail Analytics Project*
 
-[Docker: Containerized]  [PostgreSQL: 15]  [Python: ETL]  [Power BI: Visualization]
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat&logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-ETL-3776AB?style=flat&logo=python&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Visualization-F2C811?style=flat&logo=powerbi&logoColor=black)
 
+---
 
-1.	Project Overview
+## 🚀 Project Overview
 
 Smart Retail Analytics is a complete end-to-end data engineering project designed to simulate a real-world retail data warehouse architecture. This project reflects enterprise-grade retail analytics architecture suitable for production-scale systems.
+
 The project demonstrates the following key capabilities:
- 	Data ingestion and transformation (ETL)
- 	Star schema data warehouse modeling
- 	PostgreSQL-based analytical storage
- 	Dockerized infrastructure
- 	Business Intelligence integration (Power BI)
 
+- Data ingestion and transformation (ETL)
+- Star schema data warehouse modeling
+- PostgreSQL-based analytical storage
+- Dockerized infrastructure
+- Business Intelligence integration (Power BI)
 
+---
 
-2.	Architecture Overview
+## 🏗 Architecture Overview
 
+```
+┌─────────────────────────────────┐
+│   Raw Data (CSV / Generated)   │
+└─────────────────┬───────────────┘
+                  ▼
+┌─────────────────────────────────┐
+│      Python ETL Pipeline       │
+└─────────────────┬───────────────┘
+                  ▼
+┌─────────────────────────────────┐
+│ PostgreSQL Data Warehouse       │
+│      (Star Schema)              │
+└─────────────────┬───────────────┘
+                  ▼
+┌─────────────────────────────────┐
+│  Power BI Desktop               │
+│  (Analytics Layer)              │
+└─────────────────────────────────┘
+```
 
+---
 
-3.	Tech Stack
+## 🛠 Tech Stack
 
- 
-Layer	Technology
-Containerization	Docker & Docker Compose
-Data Warehouse	PostgreSQL 15
-ETL	Python (Pandas, Psycopg2 / SQLAlchemy)
-Data Modeling	Star Schema
-BI Layer	Power BI Desktop
-Optional NoSQL	MongoDB
+| Layer            | Technology                             |
+| ---------------- | -------------------------------------- |
+| Containerization | Docker & Docker Compose                |
+| Data Warehouse   | PostgreSQL 15                          |
+| ETL              | Python (Pandas, Psycopg2 / SQLAlchemy) |
+| Data Modeling    | Star Schema                            |
+| BI Layer         | Power BI Desktop                       |
+| Optional NoSQL   | MongoDB                                |
 
-4.	Project Structure
+---
 
+## 📂 Project Structure
 
+```
+smart-retail-analytics/
+│
+├── docker-compose.yml
+├── README.md
+│
+├── etl/
+│   ├── generate_raw_data.py
+│   ├── transform_data.py
+│   └── load_to_postgres.py
+│
+├── sql/
+│   ├── create_tables.sql
+│   └── indexes.sql
+│
+├── data/
+│   └── raw_sales.csv
+│
+└── powerbi/
+    └── dashboard.pbix
+```
 
-5.	Data Warehouse Design
+---
 
-The data warehouse follows a strict Star Schema Model to optimize for analytical queries.
+## 🧠 Data Warehouse Design
 
-Fact Table
-fact_sales
- 	order_id
- 	date_id
- 	customer_id
- 	product_id
- 	quantity
- 	gross_amount
- 	net_amount
- 
- 	discount
- 	payment_method
- 	is_returned
+The data warehouse follows a strict **Star Schema Model** to optimize for analytical queries.
 
-Dimension Tables
- 	dim_customer: Customer demographics and details.
- 	dim_product: Product categorization and pricing.
- 	dim_date: Date hierarchy for temporal analysis.
+### 📌 Fact Table
 
+**fact_sales**
 
+- `order_id`
+- `date_id`
+- `customer_id`
+- `product_id`
+- `quantity`
+- `gross_amount`
+- `net_amount`
+- `discount`
+- `payment_method`
+- `is_returned`
 
-6.	How to Run the Project
+### 📌 Dimension Tables
 
-1.	Clone the Repository
+- **dim_customer**: Customer demographics and details
+- **dim_product**: Product categorization and pricing
+- **dim_date**: Date hierarchy for temporal analysis
 
-2.	Start Infrastructure
+---
 
+## ⚙️ How to Run the Project
 
-PostgreSQL will run on:
+### 1️⃣ Clone the Repository
 
-3.	Run ETL Pipeline
+```bash
+git clone https://github.com/yourusername/smart-retail-analytics.git
+cd smart-retail-analytics
+```
+
+### 2️⃣ Start Infrastructure
+
+```bash
+docker compose up -d
+```
+
+PostgreSQL will run on: `localhost:55432`
+
+### 3️⃣ Run ETL Pipeline
+
 Set environment variable:
 
+```bash
+export DB_PASSWORD=sra_password
+```
 
 Run the loader script:
 
+```bash
+python etl/load_to_postgres.py
+```
 
 Expected output:
 
-4.	Verify Data
+```
+🚀 Starting Load to Postgres...
+📥 Inserting data...
+✅ Completed successfully
+```
 
+### 4️⃣ Verify Data
+
+```bash
+psql -h localhost -p 55432 -U postgres -d smart_retail_dw
+```
 
 Example validation query:
 
- 
-7.	Power BI Integration
+```sql
+SELECT COUNT(*) FROM fact_sales;
+```
+
+---
+
+## 📊 Power BI Integration
 
 To connect Power BI Desktop to the data warehouse:
-1.	Open Power BI Desktop.
-2.	Click Get Data → PostgreSQL.
-3.	Use the following credentials:
- 	Server: localhost
- 	Port: 55432
- 	Database: smart_retail_dw
- 	Username: postgres
- 	Password: sra_password
 
+1. Open **Power BI Desktop**
+2. Click **Get Data** → **PostgreSQL**
+3. Use the following credentials:
+   - **Server:** localhost
+   - **Port:** 55432
+   - **Database:** smart_retail_dw
+   - **Username:** postgres
+   - **Password:** sra_password
 
+---
 
-8.	Sample Dashboard Metrics
+## 📈 Sample Dashboard Metrics
 
 The project enables the creation of the following analytical views:
- 	💰 Total Revenue KPI
- 	📦 Total Orders
- 	📈 Revenue by Month
- 	🏷 Sales by Category
- 	💳 Payment Method Distribution
- 	🔥 Top 10 Products
- 	📍 Sales by City
 
+- 💰 **Total Revenue KPI**
+- 📦 **Total Orders**
+- 📈 **Revenue by Month**
+- 🏷 **Sales by Category**
+- 💳 **Payment Method Distribution**
+- 🔥 **Top 10 Products**
+- 📍 **Sales by City**
 
+---
 
-9.	ETL Process Overview
+## 🧪 ETL Process Overview
 
 The ETL pipeline performs the following logical steps:
-1.	Data ingestion from CSV / generated dataset.
-2.	Data cleansing and validation.
-3.	Data transformation.
-4.	Star schema mapping.
-5.	Bulk insert into PostgreSQL.
 
+1. Data ingestion from CSV / generated dataset
+2. Data cleansing and validation
+3. Data transformation
+4. Star schema mapping
+5. Bulk insert into PostgreSQL
 
+---
 
-10.	Configuration
+## 🔐 Configuration
 
-Environment Variables
- 
-Variable	Description
-DB_PASSWORD
-PostgreSQL password
-Docker Services
+### Environment Variables
 
-Service	Port
-PostgreSQL	55432
-MongoDB	27017
+| Variable        | Description         |
+| --------------- | ------------------- |
+| `DB_PASSWORD` | PostgreSQL password |
 
+### 📦 Docker Services
 
-11.	Project Objectives & Future Enhancements
-Objectives
- 	Demonstrate practical data engineering workflow.
- 	Design analytical-ready schema.
- 	Build BI-ready warehouse.
- 	Simulate enterprise retail analytics architecture.
+| Service    | Port  |
+| ---------- | ----- |
+| PostgreSQL | 55432 |
+| MongoDB    | 27017 |
 
-Future Enhancements
- 	Add Apache Airflow for orchestration.
- 	Implement Kafka streaming ingestion.
- 	Add CDC with Debezium.
- 	Deploy Superset for server-side BI.
- 	Add ClickHouse for high-performance analytics.
- 	Cloud deployment on AWS / GCP.
+---
 
+## 🎯 Project Objectives
 
+- Demonstrate practical data engineering workflow
+- Design analytical-ready schema
+- Build BI-ready warehouse
+- Simulate enterprise retail analytics architecture
 
-12.	Why This Project Matters
+---
+
+## 📚 Future Enhancements
+
+- Add Apache Airflow for orchestration
+- Implement Kafka streaming ingestion
+- Add CDC with Debezium
+- Deploy Superset for server-side BI
+- Add ClickHouse for high-performance analytics
+- Cloud deployment on AWS / GCP
+
+---
+
+## ⭐ Why This Project Matters
 
 This project showcases real-world warehouse modeling, Dockerized infrastructure management, ETL pipeline engineering, and BI integration. It demonstrates end-to-end data lifecycle management.
+
 It reflects skills relevant for the following roles:
- 	Data Engineering
- 	Analytics Engineering
- 	Business Intelligence
- 	Data Architecture
- 
- 
 
+- **Data Engineering**
+- **Analytics Engineering**
+- **Business Intelligence**
+- **Data Architecture**
 
+---
 
+## 👨‍💻 Author
 
-Author: Nicolas Salloum (Nix) | Senior Data Architect ISE Department – Valoores SAL
-© 2023 Smart Retail Analytics. All rights reserved.
+**Nicolas Salloum (Nix)**
+*Data Engineer*
+
+---
+
+<div align="center">
+  <sub>© 2026 Smart Retail Analytics. All rights reserved.</sub>
+</div>
