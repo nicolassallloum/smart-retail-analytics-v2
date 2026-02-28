@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: sra_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: smart_retail_dw
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sra_password
+    ports:
+      - "55432:5432"
+    volumes:
+      - sra_pgdata:/var/lib/postgresql/data
+      - ./sql:/sql
+
+  mongo:
+    image: mongo:7
+    container_name: sra_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - sra_mongodata:/data/db
+
+  sra_superset:
+    build:
+      context: .
+      dockerfile: Dockerfile.superset
+    container_name: sra_superset
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: "3bf228bbf9123853eac225efbb1e72496ce0600b1aab3568587a3b8385ae49b5"
+    volumes:
+      - superset_home:/app/superset_home
+    depends_on:
+      - postgres   # ✅ FIXED HERE
+    command: >
+      /bin/bash -c "
+      superset db upgrade &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088
+      "
+
+volumes:
+  sra_pgdata:
+  sra_mongodata:
+  superset_home:

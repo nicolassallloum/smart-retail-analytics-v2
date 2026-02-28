@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  postgres:
+  sra_postgres:
     image: postgres:15
     container_name: sra_postgres
     restart: always
@@ -7,14 +9,12 @@ services:
       POSTGRES_DB: smart_retail_dw
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: sra_password
-      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
     ports:
       - "55432:5432"
     volumes:
       - sra_pgdata:/var/lib/postgresql/data
-      - ./sql:/sql
 
-  mongo:
+  sra_mongo:
     image: mongo:7
     container_name: sra_mongo
     ports:
